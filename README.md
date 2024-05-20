@@ -1,1 +1,0 @@
-# jericoacoara.info

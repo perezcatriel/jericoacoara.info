@@ -22,7 +22,7 @@ export default {
   justify-content:space-between;
   align-items: center;
   margin-top: 10px;
-  padding: 0px 10px;
+  padding: 5px 10px;
   border-bottom: 4px solid black;
 }
 
@@ -36,7 +36,9 @@ export default {
   background-color: black;
 }
 
-
+h1 {
+  margin: 5px 0;
+}
 
 img {
   width: 40px;
