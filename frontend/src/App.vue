@@ -1,27 +1,29 @@
 <template>
-  <CxHeader msg="Jeri Info"/>
-  <CxNews />
+  <div id="app">
+    <CxHeader />
+    <Home/>
+    <router-view />
+    <CxFooter />
+  </div>
 </template>
 
 <script>
-import CxHeader from './components/CxHeader.vue'
-import CxNews from './components/CxNews.vue'
+import CxHeader from './components/CxHeader.vue';
+import CxFooter from './components/CxFooter.vue';
+import Home from './views/HomePage.vue';
 
 export default {
-  name: 'App',
   components: {
     CxHeader,
-    CxNews
+    Home,
+    CxFooter
   }
-}
+};
 </script>
 
 <style>
 * {
   margin: 0;
   padding: 0;
-}
-#app {
- font-family: monospace;
 }
 </style>
