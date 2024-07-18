@@ -3,7 +3,7 @@
     <h2>Tours y Actividades</h2>
     <div class="tours">
       <div class="tour" v-for="tour in tours" :key="tour.id">
-        <img src="@/assets/logo.jpeg" :alt="tour.name" />
+        <img :src="tour.image" :alt="tour.name" />
         <h3>{{ tour.name }}</h3>
         <p>{{ tour.description }}</p>
         <p>Precio: {{ tour.price }}</p>
@@ -23,14 +23,14 @@ export default {
           name: "Playa Jericoacoara",
           description: "Una playa increíble.",
           price: "$100",
-          image: require("@/assets/logo.jpeg"),
+          image: require("@/assets/photos/dunapordosol.jpg"),
         },
         {
           id: 2,
           name: "Duna del Pôr do Sol",
           description: "Un hermoso atardecer.",
           price: "$80",
-          image: require("@/assets/logo.jpeg"),
+          image: require("@/assets/photos/dunapordosol.jpg"),
         },
         {
           id: 3,
@@ -77,6 +77,8 @@ export default {
 .tours-activities {
   text-align: center;
   padding: 2rem;
+  width: 80vw;
+  margin: auto;
 }
 .tours {
   display: flex;

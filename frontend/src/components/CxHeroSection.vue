@@ -16,7 +16,7 @@
 export default {
   data() {
     return {
-      heroImage: require('@/assets/logo.jpeg') // Reemplazar con la ruta de la imagen destacada
+      heroImage: require('@/assets/photos/dunapordosol.jpg') // Reemplazar con la ruta de la imagen destacada
     };
   },
   methods: {
@@ -81,5 +81,21 @@ export default {
 
 .hero-content button:hover {
   background-color: #0056b3; /* Ejemplo: color de fondo del botón al pasar el mouse */
+}
+
+/* Estilos solo para tamaño desktop */
+@media screen and (min-width: 768px) {
+  .hero-content h1 {
+    font-size: 4rem; /* Tamaño del título en desktop */
+  }
+
+  .hero-content p {
+    font-size: 2rem; /* Tamaño del párrafo en desktop */
+  }
+
+  .hero-content button {
+    padding: 1rem 2.5rem; /* Padding del botón en desktop */
+    font-size: 1.25rem; /* Tamaño de la fuente del botón en desktop */
+  }
 }
 </style>

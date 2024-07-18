@@ -34,6 +34,8 @@ export default {
 .testimonials {
   text-align: center;
   padding: 2rem;
+  width: 80vw;
+  margin: auto;
 }
 .testimonials-list {
   display: flex;

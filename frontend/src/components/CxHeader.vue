@@ -95,13 +95,35 @@ nav ul.show-menu li a {
   h1 {
     text-align: center;
   }
-  
+
   .menu-icon {
     display: block;
   }
 
   nav ul {
     position: relative;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    position: static;
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #000;
   }
 }
 </style>
