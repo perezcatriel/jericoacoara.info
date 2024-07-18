@@ -8,7 +8,7 @@
     <nav>
       <ul :class="{ 'show-menu': isMenuOpen }">
         <li><a href="/" @click="closeMenu">Inicio</a></li>
-        <li><a href="/#highlights" @click="closeMenu">Qué Hacer</a></li>
+        <li><a href="/blog-post" @click="closeMenu">Qué Hacer</a></li>
         <li><a href="/#tours" @click="closeMenu">Tours</a></li>
         <li><a href="/#contact" @click="closeMenu">Contacto</a></li>
       </ul>

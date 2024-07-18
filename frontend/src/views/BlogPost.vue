@@ -1,23 +1,17 @@
 <template>
   <div class="blog-post">
-    <CxHeader />
     <main>
       <h2>{{ post.title }}</h2>
       <p>{{ post.content }}</p>
     </main>
-    <CxFooter />
   </div>
 </template>
 
 <script>
-import CxHeader from '@/components/CxHeader.vue';
-import CxFooter from '@/components/CxFooter.vue';
-
 export default {
   name: 'BlogPost',
   components: {
-    CxHeader,
-    CxFooter,
+    
   },
   data() {
     return {
