@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     exploreMore() {
-      // Lógica para navegar a la sección de exploración
+      this.$router.push('/jericoacoara');
     }
   }
 };
