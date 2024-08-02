@@ -2,22 +2,28 @@
   <header class="header">
     <img src="@/assets/logo.jpeg" alt="Jericoacoara" class="logo" />
     <h1>Jeri Info</h1>
-    <div class="menu-icon" @click="toggleMenu">
-      <span class="menu-icon__bars">&#9776;</span> <!-- Icono de menú con Unicode -->
+    <div
+      class="menu-icon"
+      @click="toggleMenu"
+      :aria-expanded="isMenuOpen.toString()"
+      aria-controls="menu"
+    >
+      <span class="menu-icon__bars">&#9776;</span>
     </div>
+
     <nav>
       <ul :class="{ 'show-menu': isMenuOpen }">
         <li><a href="/" @click="closeMenu">Inicio</a></li>
-        <li><a href="/blog-post" @click="closeMenu">Qué Hacer</a></li>
-        <li><a href="/#tours" @click="closeMenu">Tours</a></li>
-        <li><a href="/#contact" @click="closeMenu">Contacto</a></li>
+        <li><a href="/blog/" @click="closeMenu">Blog</a></li>
+        <li><a href="/#rentals" @click="closeMenu">Alojamientos</a></li>
+        <li><a href="/#footer" @click="closeMenu">Contacto</a></li>
       </ul>
     </nav>
   </header>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 export default {
   setup() {
@@ -34,17 +40,19 @@ export default {
     return {
       isMenuOpen,
       toggleMenu,
-      closeMenu
+      closeMenu,
     };
-  }
+  },
 };
 </script>
 
 <style scoped>
+/* Mobile-first styles */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   padding: 1rem;
   background-color: #fff;
 }
@@ -55,7 +63,7 @@ export default {
 }
 
 .menu-icon {
-  display: none;
+  display: block;
   cursor: pointer;
 }
 
@@ -91,21 +99,13 @@ nav ul.show-menu li a {
   color: #000;
 }
 
-@media screen and (max-width: 768px) {
-  h1 {
-    text-align: center;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  nav ul {
-    position: relative;
-  }
-}
-
+/* Styles for larger screens */
 @media screen and (min-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .menu-icon {
     display: none;
   }
@@ -115,6 +115,9 @@ nav ul.show-menu li a {
     flex-direction: row;
     gap: 1rem;
     position: static;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
   }
 
   nav ul li {

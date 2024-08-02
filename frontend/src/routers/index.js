@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/HomePage.vue";
-import BlogPost from "../views/BlogPost.vue";
-import JericoacoaraPage from '../views/JericoacoaraPage.vue';
+import VxHome from "../views/VxHome.vue";
+import VxBlogPosts from "../views/VxBlogPosts.vue";
+import VxBlogPost from "../views/VxBlogPost.vue";
 
 const routes = [
-  { path: "/", name: "Home", component: Home },
-  { path: "/blog-post", name: "BlogPost", component: BlogPost },
-  { path: "/jericoacoara", name: "JericoacoaraPage", component: JericoacoaraPage },
+  { path: "/", name: "Home", component: VxHome },
+  { path: "/blog", name: "BlogPosts", component: VxBlogPosts },
+  { path: "/blog/:id", name: "BlogPost", component: VxBlogPost },
 ];
 
 const router = createRouter({

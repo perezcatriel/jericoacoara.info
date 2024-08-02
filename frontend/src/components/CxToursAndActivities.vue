@@ -2,19 +2,26 @@
   <div class="tours-activities">
     <h2>Tours y Actividades</h2>
     <div class="tours">
-      <div class="tour" v-for="tour in tours" :key="tour.id">
-        <img :src="tour.image" :alt="tour.name" />
-        <h3>{{ tour.name }}</h3>
-        <p>{{ tour.description }}</p>
-        <p>Precio: {{ tour.price }}</p>
-        <button @click="bookTour(tour.id)">Reservar Ahora</button>
-      </div>
+      <CxCard
+        v-for="tour in tours"
+        :key="tour.id"
+        :name="tour.name"
+        :description="tour.description"
+        :price="tour.price"
+        :image="tour.image"
+        :onClick="() => bookTour(tour.id)"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import CxCard from './CxCard.vue'; // Asegúrate de que la ruta es correcta
+
 export default {
+  components: {
+    CxCard
+  },
   data() {
     return {
       tours: [
@@ -77,28 +84,22 @@ export default {
 .tours-activities {
   text-align: center;
   padding: 2rem;
-  width: 80vw;
+  width: 90vw;
+  max-width: 1200px;
   margin: auto;
 }
+
 .tours {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.tour {
-  margin: 1rem;
-  width: 300px;
-}
-.tour img {
-  width: 100%;
-  height: auto;
-}
-.tour button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 768px) {
+  .tours {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>
