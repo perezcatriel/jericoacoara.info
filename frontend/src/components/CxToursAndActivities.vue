@@ -84,22 +84,15 @@ export default {
 .tours-activities {
   text-align: center;
   padding: 2rem;
-  width: 90vw;
-  max-width: 1200px;
-  margin: auto;
+  width: 100%;
+  max-width: 1200px; /* Limita el ancho máximo para pantallas grandes */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
 .tours {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-/* Estilos específicos para dispositivos móviles */
-@media (max-width: 768px) {
-  .tours {
-    flex-direction: column;
-    align-items: center;
-  }
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  gap: 1rem; /* Espacio uniforme entre las tarjetas */
 }
 </style>

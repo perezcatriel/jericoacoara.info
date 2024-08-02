@@ -58,21 +58,15 @@ export default {
 .highlights {
   text-align: center;
   padding: 2rem;
-  width: 80vw;
-  margin: auto;
+  width: 100%;
+  max-width: 1200px; /* Opcional: Limita el ancho máximo */
+  margin: 0 auto;
 }
 
 .attractions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-/* Estilos específicos para dispositivos móviles */
-@media (max-width: 768px) {
-  .attractions {
-    flex-direction: column;
-    align-items: center;
-  }
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  gap: 1rem; /* Espacio uniforme entre tarjetas */
 }
 </style>
