@@ -4,18 +4,18 @@
       <form class="newsletter-form" @submit.prevent="submitForm">
         <h2>Suscríbete a nuestro Newsletter</h2>
         <div class="form-group">
-          <label for="name">Nombre:</label>
+          <label for="name"></label>
           <input type="text" id="name" v-model="name" placeholder="Introduce tu nombre" required />
         </div>
         <div class="form-group">
-          <label for="email">Correo Electrónico:</label>
+          <label for="email"></label>
           <input type="email" id="email" v-model="email" placeholder="Introduce tu correo electrónico" required />
         </div>
         <button type="submit">Suscribirse</button>
         <p v-if="message" class="message">{{ message }}</p>
       </form>
       <p>&copy; 2024 Jericoacoara. Todos los derechos reservados.</p>
-      <p>By <strong><a href="https://datacraft.vercel.app" target="_blank">DataCraft</a></strong></p>
+      <p>By <strong><a href="https://datacraft.vercel.app" target="_blank" class="link">DataCraft</a></strong></p>
       <nav>
         <ul>
           <li><a href="#">&#x2191;</a></li> <!-- Flecha hacia arriba en Unicode -->
@@ -132,6 +132,11 @@ export default {
 .newsletter-form input:focus, .newsletter-form button:focus {
   outline: none;
   border-color: #007bff;
+}
+
+.link {
+  text-decoration: none;
+  color: #007bff;
 }
 
 .message {
