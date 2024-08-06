@@ -1,5 +1,5 @@
 <template>
-  <div class="rentals">
+  <div class="rentals" id="rentals">
     <h2>Alquileres Disponibles</h2>
     <div class="rentals-list">
       <CxCard
@@ -7,9 +7,8 @@
         :key="rental.id"
         :name="rental.name"
         :description="rental.description"
-        :price="rental.price"
         :image="rental.image"
-        :onClick="() => bookRental(rental.id)"
+        :url="rental.url"
       />
     </div>
   </div>
@@ -31,6 +30,7 @@ export default {
           description: "Hermosa casa frente al mar.",
           price: 100,
           image: require("@/assets/photos/casafrente.jpg"),
+          url: "https://airbnb.com/h/casadehuespedesjeri"
         },
         {
           id: 2,
@@ -38,17 +38,12 @@ export default {
           description: "Cómodo apartamento en el corazón de la ciudad.",
           price: 80,
           image: require("@/assets/photos/casacuarto.jpg"),
+          url: "https://airbnb.com/h/casadehuespedesjeri1"
         },
         // Agrega más alquileres según sea necesario
       ],
     };
-  },
-  methods: {
-    bookRental(id) {
-      // Lógica para reservar el alquiler con el ID proporcionado
-      console.log(`Reservando el alquiler con ID ${id}`);
-    },
-  },
+  }
 };
 </script>
 

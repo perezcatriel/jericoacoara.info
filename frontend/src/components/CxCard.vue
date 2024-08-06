@@ -6,7 +6,7 @@
     <div class="card-content">
       <h3>{{ name }}</h3>
       <p>{{ description }}</p>
-      <button @click="handleClick">Ver Más</button>
+      <a :href="url" target="_blank" rel="noopener noreferrer" class="btn">Ver Más</a>
     </div>
   </div>
 </template>
@@ -17,14 +17,7 @@ export default {
     name: String,
     description: String,
     image: String,
-    onClick: Function
-  },
-  methods: {
-    handleClick() {
-      if (this.onClick) {
-        this.onClick();
-      }
-    }
+    url: String
   }
 };
 </script>
@@ -71,7 +64,7 @@ export default {
   margin: 0.5rem 0;
 }
 
-.card-content button {
+.card-content .btn {
   margin-top: auto; /* Espacio entre el botón y el contenido */
   padding: 0.75rem 1.5rem;
   background-color: #007bff;
@@ -80,9 +73,10 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
-.card-content button:hover {
+.card-content .btn:hover {
   background-color: #0056b3;
 }
 </style>

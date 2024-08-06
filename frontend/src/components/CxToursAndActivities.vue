@@ -9,7 +9,7 @@
         :description="tour.description"
         :price="tour.price"
         :image="tour.image"
-        :onClick="() => bookTour(tour.id)"
+        :onClick="() => bookTour(tour.markdownPath)"
       />
     </div>
   </div>
@@ -30,7 +30,8 @@ export default {
           name: "Playa Jericoacoara",
           description: "Una playa increíble.",
           price: "$100",
-          image: require("@/assets/photos/dunapordosol.jpg"),
+          image: require("@/assets/photos/malhada-beach.webp"),
+          markdownPath: "blog/playa-jericoacoara"
         },
         {
           id: 2,
@@ -38,43 +39,48 @@ export default {
           description: "Un hermoso atardecer.",
           price: "$80",
           image: require("@/assets/photos/dunapordosol.jpg"),
+          markdownPath: "blog/duna-por-do-sol"
         },
         {
           id: 3,
-          name: "Lagoa do Praíso",
+          name: "Lagoa do Paraíso",
           description: "Un hermoso atardecer.",
           price: "$80",
-          image: require("@/assets/logo.jpeg"),
+          image: require("@/assets/photos/lagoa-do-paraiso.webp"),
+          markdownPath: "blog/lagoa-do-paraiso"
         },
         {
           id: 4,
           name: "Pedra Furada",
           description: "Un hermoso atardecer.",
           price: "$80",
-          image: require("@/assets/logo.jpeg"),
+          image: require("@/assets/photos/pedra-furada.webp"),
+          markdownPath: "blog/pedra-furada"
         },
         {
           id: 5,
           name: "Kitesurf e Windsurf",
           description: "Un hermoso atardecer.",
           price: "$80",
-          image: require("@/assets/logo.jpeg"),
+          image: require("@/assets/photos/Jeri-Kitesurfing.webp"),
+          markdownPath: "blog/kitesurf-windsurf"
         },
         {
           id: 6,
-          name: "Yoga, Massagens e Tarot",
+          name: "Yoga, Masajes y Tarot",
           description: "Un hermoso atardecer.",
           price: "$80",
-          image: require("@/assets/logo.jpeg"),
+          image: require("@/assets/photos/tarot-jeri.webp"),
+          markdownPath: "blog/yoga-masajes-tarot"
         },
         // Agrega más tours según sea necesario
       ],
     };
   },
   methods: {
-    bookTour(id) {
-      // Lógica para reservar el tour
-      alert(`Reservar tour con ID: ${id}`);
+    bookTour(markdownPath) {
+      const url = `${window.location.origin}/${markdownPath}`;
+      window.location.href = url
     },
   },
 };

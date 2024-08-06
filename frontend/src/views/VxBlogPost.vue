@@ -39,8 +39,14 @@ export default {
       this.$router.push("/blog");
     },
     ctaAction() {
-      // Acción para el botón CTA
-      alert("Acción CTA ejecutada.");
+      // Redirecciona a home/#rentals
+      this.$router.push({ path: "/", hash: "#rentals" });
+      setTimeout(() => {
+          const element = document.getElementById("rentals");
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 300);
     }
   },
 };
